@@ -1,4 +1,4 @@
-GOPATH ?= `$(pwd)`
+GOPATH = /home/dna/go
 
 JSONNET_BIN := $(GOPATH)/bin/jsonnet
 JB_BINARY := $(GOPATH)/bin/jb

@@ -22,7 +22,7 @@
     },
     {
       name: 'metallbExporter',
-      enabled: false,
+      enabled: true,
       file: import 'metallb.jsonnet',
     },
     {
@@ -39,11 +39,11 @@
 
   k3s: {
     enabled: false,
-    master_ip: ['192.168.15.15'],
+    master_ip: ['10.10.10.1'],
   },
 
   // Domain suffix for the ingresses
-  suffixDomain: '192.168.15.15.nip.io',
+  suffixDomain: '10.10.10.1.nip.io',
   // If TLSingress is true, a self-signed HTTPS ingress with redirect will be created
   TLSingress: true,
   // If UseProvidedCerts is true, provided files will be used on created HTTPS ingresses.
