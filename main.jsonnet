@@ -18,9 +18,9 @@ local kp = (import 'kube-prometheus/kube-prometheus.libsonnet')
 
 
 // Generate core modules
-{ ['setup/00namespace-' + name]: kp.kubePrometheus[name] for name in std.objectFields(kp.kubePrometheus) }
+{ ['setup/0namespace-' + name]: kp.kubePrometheus[name] for name in std.objectFields(kp.kubePrometheus) }
 {
-  ['setup/0prometheus-operator-' + name]: kp.prometheusOperator[name]
+  ['setup/prometheus-operator-' + name]: kp.prometheusOperator[name]
   for name in std.filter((function(name) name != 'serviceMonitor'), std.objectFields(kp.prometheusOperator))
 } +
 // serviceMonitor is separated so that it can be created after the CRDs are ready
